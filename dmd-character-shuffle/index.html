@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CC/CC – Tweakpane</title>
+
+    <!-- Libraries & Utilities -->
+    <script src="/assets/paper-full.min.js"></script>
+    <script src="/assets/acorn.js"></script>
+    <script src="/assets/utils-global.js"></script>
+    <script src="/assets/tweakpane-global.js"></script>
+    <script src="/assets/tweakpane-file-import-global.js"></script>
+
+    <!-- Styles -->
+    <link href="/assets/style.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        html,
+        body,
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        /* Hide the video and the video-still */
+        #video,
+        #video-still {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+    <video id="video" autoplay></video>
+    <canvas id="video-still" width="640" height="480"></canvas>
+
+    <!-- PaperScript -->
+    <script src="./index.js" type="text/paperscript" canvas="canvas"></script>
+</body>
+</html>

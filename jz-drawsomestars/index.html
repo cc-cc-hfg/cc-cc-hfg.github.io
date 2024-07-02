@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CC/CC</title>
+
+    <!-- Libraries & Utilities -->
+    <script src="/assets/paper-full.min.js"></script>
+    <script src="/assets/acorn.js"></script>
+    <script src="/assets/utils-global.js"></script>
+    <script src="/assets/tweakpane-global.js"></script>
+    <script src="/assets/tweakpane-file-import-global.js"></script>
+
+    <!-- PaperScript -->
+    <script src="./index.js" type="text/paperscript" canvas="canvas"></script>
+
+    <!-- Styles -->
+    <style>
+      body {
+        margin: 0;
+
+        background: blue;
+      }
+
+      html,
+      body,
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+
+      @keyframes bg {
+        0% {
+          background: #0011ff;
+        }
+        25% {
+          background: #ff0000;
+        }
+        50% {
+          background: #22ff00;
+        }
+        75% {
+          background: #c8ff00;
+        }
+        100% {
+          background: #0011ff;
+        }
+      }
+      body {
+        background: #0011ff;
+        animation: bg 10s linear infinite;
+      }
+
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" resize></canvas>
+  </body>
+</html>
