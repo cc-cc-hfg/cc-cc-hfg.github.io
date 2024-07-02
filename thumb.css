@@ -1,0 +1,25 @@
+.thumb {
+  --bg: white;
+
+  position: relative;
+  display: block;
+  padding: 1rem;
+  padding-bottom: var(--cell-size);
+
+  /* Prevent unstyled content before thumb setup */
+  &:not(:has(.frame-border)) {
+    opacity: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--bg);
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+}

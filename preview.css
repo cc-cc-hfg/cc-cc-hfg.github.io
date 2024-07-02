@@ -1,0 +1,37 @@
+.preview {
+  padding: 2rem;
+}
+
+.preview-content {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  .frame-border {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+::backdrop {
+  background-color: var(--bg);
+}
+
+dialog,
+::backdrop {
+  transition: display 300ms allow-discrete, overlay 300ms allow-discrete,
+    opacity 300ms;
+  opacity: 0;
+}
+
+[open],
+[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  [open],
+  [open]::backdrop {
+    opacity: 0;
+  }
+}
