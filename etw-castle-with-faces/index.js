@@ -1,5 +1,5 @@
 function fitFaceToPoints(face, points, scale) {
-  // Create a rectangle around the four points.
+  // castle and faces
   const [p1, p2, p3, p4] = points
   var minX = Math.min(p1.x, p2.x, p3.x, p4.x)
   var minY = Math.min(p1.y, p2.y, p3.y, p4.y)
@@ -27,7 +27,7 @@ function fitFaces() {
       castle.segments[14].point,
       castle.segments[15].point,
     ],
-    0.5
+    0.8
   )
 
   // Face 2
@@ -39,7 +39,7 @@ function fitFaces() {
       castle.segments[7].point,
       castle.segments[8].point,
     ],
-    0.5
+    1.2
   )
 
   // Face 3
@@ -51,7 +51,7 @@ function fitFaces() {
       castle.segments[16].point,
       castle.segments[22].point,
     ],
-    0.2
+    0.6
   )
 }
 
@@ -122,4 +122,34 @@ pane.on("change", function () {
   if (castle) {
     castle.fillColor = params.color
   }
+})
+
+var text = new PointText({
+  point: [15, 50],
+  content: "Lucky number: 2,    ,7,    ,9,     ,14,    ,16,     ,21,",
+  fillColor: "pink",
+  fontFamily: "Outfit",
+  fontSize: 25,
+  strokeColor: "black",
+  strokeWidth: 1,
+})
+
+var text = new PointText({
+  point: [200, 70],
+  content: " 3      8      10      15       17       22",
+  fillColor: "pink",
+  fontFamily: "Outfit",
+  fontSize: 25,
+  strokeColor: "black",
+  strokeWidth: 1,
+})
+
+var text = new PointText({
+  point: [900, 580],
+  content: " drag the dot!",
+  fillColor: "pink",
+  fontFamily: "Outfit",
+  fontSize: 25,
+  strokeColor: "black",
+  strokeWidth: 1,
 })

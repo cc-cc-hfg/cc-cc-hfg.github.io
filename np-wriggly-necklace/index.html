@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wriggly necklace</title>
+
+    <!-- Libraries & Utilities -->
+    <script src="/assets/paper-full.min.js"></script>
+    <script src="/assets/acorn.js"></script>
+
+    <script src="/assets/utils-global.js"></script>
+    <script src="/assets/tweakpane-global.js"></script>
+    <script src="/assets/tweakpane-file-import-global.js"></script>
+
+    <!-- PaperScript -->
+    <script src="./index.js" type="text/paperscript" canvas="canvas"></script>
+
+    <!-- Styles -->
+    <style>
+      body {
+        margin: 0;
+      }
+
+      html,
+      body,
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="styledText">press the A, S and D keys!</div>
+
+    <script>
+      const styledText = document.getElementById("styledText")
+      styledText.style.fontFamily = "'Courier New', Courier, monospace"
+      styledText.style.fontSize = "24px"
+      styledText.style.color = "white"
+      styledText.style.textShadow =
+        "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000"
+      styledText.style.position = "absolute"
+      styledText.style.top = "20px"
+      styledText.style.left = "50%"
+      styledText.style.transform = "translateX(-50%)"
+    </script>
+    <canvas id="canvas" resize></canvas>
+  </body>
+</html>
