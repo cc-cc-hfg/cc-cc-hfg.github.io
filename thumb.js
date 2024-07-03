@@ -15,7 +15,7 @@ export const setupThumb = (thumb) => {
     height,
     verts: Math.floor(randomMinMax(6, 30)),
     irregularity: randomMinMax(0.2, 0.4),
-    spikiness: randomMinMax(0, 0.25),
+    spikiness: randomMinMax(0, 0.1),
     boundingShape: thumb.dataset.boundingShape ?? "rectangle",
     smoothing: 0,
   })

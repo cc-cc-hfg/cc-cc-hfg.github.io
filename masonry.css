@@ -6,8 +6,8 @@
   grid-auto-flow: dense;
 
   .cell {
-    --columns: 2;
-    --rows: 2;
+    --columns: 6;
+    --rows: 6;
 
     width: 100%;
     height: 100%;
