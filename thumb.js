@@ -17,7 +17,7 @@ export const setupThumb = (thumb) => {
     irregularity: randomMinMax(0.2, 0.4),
     spikiness: randomMinMax(0, 0.1),
     boundingShape: thumb.dataset.boundingShape ?? "rectangle",
-    smoothing: 0,
+    smoothing: 1,
   })
 
   const blob = document.createElementNS("http://www.w3.org/2000/svg", "svg")
