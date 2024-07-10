@@ -31,6 +31,9 @@ const handleLocation = () => {
   }
 }
 
-iframe.addEventListener("load", () => (document.body.dataset.loading = "false"))
+iframe.addEventListener("load", () => {
+  document.body.dataset.loading = "false"
+  iframe.contentWindow.focus()
+})
 window.addEventListener("popstate", handleLocation)
 window.addEventListener("load", handleLocation)
