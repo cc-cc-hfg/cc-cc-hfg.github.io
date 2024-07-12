@@ -1,45 +1,38 @@
-const radiusPetal = 100
-const radiusInner = 50
-const numPetals = 5
-
-const innerCircle = new Path.Circle({
-  radius: radiusInner,
-  fillColor: "blue",
-  center: view.center,
-  insert: false,
-})
-
-// We have to make a list of all the shapes that we want to unite.
-// Let's start with the inner circle.
-const shapes = [innerCircle]
-
-for (let i = 0; i < numPetals; i++) {
-  const outerCircle = new Path.Circle({
-    radius: radiusPetal,
-    fillColor: "blue",
-    center: view.center.add([0, 100]),
-    insert: false,
-  })
-  outerCircle.pivot = view.center
-  outerCircle.rotate((360 / numPetals) * i)
-
-  // Add the shape we created.
-  shapes.push(outerCircle)
-}
-
-const flower = uniteAll(shapes)
-flower.strokeColor = "blue"
-flower.fillColor = "transparent"
-flower.remove()
-
-project.currentStyle.fillColor = "black"
-
+// Pearl mouse
 tool.fixedDistance = 30
 
-tool.minDistance = 50
-
 function onMouseMove(event) {
-  const clone = flower.clone()
-  project.activeLayer.addChild(clone)
-  clone.position = event.point
+  var circle = new Path.Circle({
+    center: event.middlePoint,
+
+    radius: event.delta.length / 2,
+  })
+
+  var gradient = new Gradient({
+    stops: [
+      ["#FFD2D2", 0.2],
+      ["#FFD2FF", 0.5],
+      ["#D2D2FF", 0.8],
+    ],
+
+    radial: true,
+  })
+
+  var from = circle.bounds.topLeft
+
+  var to = circle.bounds.bottomRight
+
+  var gradientColor = new Color(gradient, from, to)
+
+  circle.fillColor = gradientColor
 }
+
+const pane = new Pane()
+pane
+  .addButton({
+    title: "Export",
+  })
+  .on("click", function () {
+    const svg = project.exportSVG({ asString: true })
+    downloadSVGFile("recolored", svg)
+  })
