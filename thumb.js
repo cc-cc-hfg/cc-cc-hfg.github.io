@@ -13,11 +13,11 @@ export const setupThumb = (thumb) => {
   const d = generateBlobPath({
     width,
     height,
-    verts: Math.floor(randomMinMax(6, 30)),
+    verts: Math.floor(randomMinMax(8, 12)),
     irregularity: randomMinMax(0.2, 0.4),
     spikiness: randomMinMax(0, 0.1),
     boundingShape: thumb.dataset.boundingShape ?? "rectangle",
-    smoothing: 0,
+    smoothing: 1,
   })
 
   const blob = document.createElementNS("http://www.w3.org/2000/svg", "svg")
