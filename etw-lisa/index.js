@@ -59,8 +59,20 @@ const params = {
   fillColor: "rgb(255,0,0)",
   strokeColor: "rgb(0,0,0)",
   strokeWidth: 1,
-  radius: 30,
+  radius: 20.65,
 }
+
+// Create a new path
+var path = new Path()
+path.strokeColor = "black" // Set the stroke color of the line
+
+// Define the start and end points
+var startPoint = new Point(50, 100)
+var endPoint = new Point(450, 100)
+
+// Add the points to the path
+path.add(startPoint)
+path.add(endPoint)
 
 function draw() {}
 
@@ -72,3 +84,8 @@ pane.addBinding(params, "strokeColor")
 pane.addBinding(params, "strokeWidth", { min: 0, max: 50 })
 pane.addBinding(params, "radius", { min: 0, max: 50 })
 pane.on("change", draw)
+
+pane.addButton({ title: "export" }).on("click", function () {
+  const svg = project.exportSVG({ asString: true })
+  downloadSVGFile("lisa", svg)
+})
