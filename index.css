@@ -7,7 +7,7 @@
 
 :root {
   --bg: black;
-  --text: orange;
+  --text: #ff4c65;
   --cell-size: 50px;
 
   background-color: var(--bg);
