@@ -62,17 +62,65 @@ const params = {
   radius: 20.65,
 }
 
-// Create a new path
 var path = new Path()
-path.strokeColor = "black" // Set the stroke color of the line
+path.strokeColor = "black"
+path.strokeWidth = 3
 
-// Define the start and end points
-var startPoint = new Point(50, 100)
-var endPoint = new Point(450, 100)
+var startPoint = new Point(400, 420)
+var endPoint = new Point(450, 420)
 
-// Add the points to the path
 path.add(startPoint)
 path.add(endPoint)
+
+var text = new PointText({
+  point: [550, 305],
+  content: "Lisa needs some hair.",
+  fillColor: "pink",
+  fontFamily: "Outfit",
+  fontSize: 20,
+  strokeColor: "black",
+  strokeWidth: 1,
+})
+
+var path = new Path()
+path.strokeColor = "black"
+path.strokeWidth = 3
+
+var startPoint = new Point(490, 300)
+var endPoint = new Point(540, 300)
+
+path.add(startPoint)
+path.add(endPoint)
+
+var text = new PointText({
+  point: [460, 425],
+  content: "Maybe also a pearl necklace.",
+  fillColor: "pink",
+  fontFamily: "Outfit",
+  fontSize: 20,
+  strokeColor: "black",
+  strokeWidth: 1,
+})
+
+var path = new Path()
+path.strokeColor = "black"
+path.strokeWidth = 3
+
+var startPoint = new Point(500, 590)
+var endPoint = new Point(550, 590)
+
+path.add(startPoint)
+path.add(endPoint)
+
+var text = new PointText({
+  point: [560, 595],
+  content: "If she has limbs would be perfect!",
+  fillColor: "pink",
+  fontFamily: "Outfit",
+  fontSize: 20,
+  strokeColor: "black",
+  strokeWidth: 1,
+})
 
 function draw() {}
 
