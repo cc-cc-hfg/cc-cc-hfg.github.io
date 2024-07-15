@@ -1,5 +1,13 @@
 import { setupThumb } from "./thumb.js"
 
+// Add a too small hint (as most of the snippets aren't optimized for mobile)
+const minWidth = 900
+/** @type {HTMLElement} */
+const tooSmall = document.querySelector(".too-small")
+const resize = () => tooSmall.togglePopover(window.innerWidth < minWidth)
+window.addEventListener("resize", resize)
+resize()
+
 const dialog = document.querySelector("dialog")
 const iframe = dialog.querySelector("iframe")
 const thumbs = Array.from(document.querySelectorAll(".thumb"))
